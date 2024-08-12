@@ -1,12 +1,12 @@
 package com.lession_5;
 
-public class Student {
+public class Student_static_method {
     private int rollno;
     private String name;
     private static String college = "BBDIT";
 
     // constructor to initialize the variable
-    Student(int r, String n) {
+    Student_static_method(int r, String n) {
         rollno = r;
         name = n;
     }
