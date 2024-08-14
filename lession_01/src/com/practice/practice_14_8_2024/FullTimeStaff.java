@@ -32,7 +32,20 @@ public class FullTimeStaff extends Staff {
 
     @Override
     public int calculateSalary() {
-        int salary = baseSalary + bonusSalary - fine;
-        return salary;
+        return baseSalary + bonusSalary - fine;
+    }
+
+    @Override
+    public String toString() {
+        return "FullTimeStaff{" +
+                "staffCode:'" + getStaffCode() + '\'' +
+                ", name: '" + getName() + '\'' +
+                ", age: '" + getAge() + '\'' +
+                ", phoneNumber: '" + getPhoneNumber() + '\'' +
+                ", email: '" + getEmail() + '\'' +
+                ", baseSalary: " + baseSalary + '\'' +
+                ", bonusSalary: " + bonusSalary + '\'' +
+                ", fine: " + fine + '\'' +
+                '}' + '\n';
     }
 }

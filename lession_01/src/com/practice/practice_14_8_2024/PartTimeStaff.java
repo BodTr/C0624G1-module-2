@@ -19,4 +19,16 @@ public class PartTimeStaff extends Staff  {
         int salary = workTime * 100000;
         return salary;
     }
+
+    @Override
+    public String toString() {
+        return "PartTimeStaff{" +
+                "staffCode:'" + getStaffCode() + '\'' +
+                ", name: '" + getName() + '\'' +
+                ", age: '" + getAge() + '\'' +
+                ", phoneNumber: '" + getPhoneNumber() + '\'' +
+                ", email: '" + getEmail() + '\'' +
+                ", workTime: '" + getWorkTime() + '\'' +
+                '}';
+    }
 }
