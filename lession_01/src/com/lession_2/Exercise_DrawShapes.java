@@ -87,10 +87,10 @@ public class Exercise_DrawShapes {
 
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
-
         switch (choice) {
             case 1:
                 drawRectangle();
+
                 break;
             case 2:
                 drawSquareTriangles();
@@ -105,5 +105,6 @@ public class Exercise_DrawShapes {
             default:
                 System.out.println("Invalid choice!");
         }
+
     }
 }
