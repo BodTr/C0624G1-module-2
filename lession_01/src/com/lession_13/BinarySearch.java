@@ -3,7 +3,6 @@ package com.lession_13;
 public class BinarySearch {
     static int[] list = {2, 4, 7, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79};
     static int binarySearch(int[] arr, int key) {
-
         int low = 0;
         int high = arr.length -1;
         while (high >= low) {
@@ -24,7 +23,4 @@ public class BinarySearch {
         System.out.println(binarySearch(list, 4));
         System.out.println(binarySearch(list, 45));
     }
-
-
-
 }
