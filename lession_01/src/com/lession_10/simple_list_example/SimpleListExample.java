@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class SimpleListExample<E> {
     private int size = 0;
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_CAPACITY = 6;
     private Object elements[];
 
     public SimpleListExample() {
@@ -12,12 +12,14 @@ public class SimpleListExample<E> {
 
     private void ensureCapacity() {
         int newSize = elements.length * 2;
-        elements = Arrays.copyOf(elements, newSize);
+        elements = Arrays.copyOf(elements, newSize); // Phương thức Arrays.copyOf(elements, newSize) copy tất cả các phần tử trong array cũ vào trong array mới, và array mới có capacity là newSize;
     }
 
     public void add(E element) {
         if  (size == elements.length) {
+
             ensureCapacity();
+            System.out.println("Max ArrayList capacity exceeded, new capacity");
         }
         elements[size++] = element;
     }
