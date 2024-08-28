@@ -15,6 +15,11 @@ public class MyListTest {
         listClone.add(3,7);
         System.out.println("list: " + list);
         System.out.println("listClone: " + listClone);
+        list.getElement(3);
+        int ele = list.indexOf(7);
+        System.out.println("ele has value 7: " + ele);
+        boolean isContains = list.contains(4);
+        System.out.println("isContains 4: " + isContains);
 
     }
 }

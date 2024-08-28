@@ -35,8 +35,9 @@ public class MyList<E> {
         elements.add(element);
     }
 
-    public E getElements(int i) {
-        return elements.get(i);
+    public void getElement(int i) {
+        System.out.println("Get element has index: " + i);
+        System.out.println(elements.get(i));
     }
 
     public void displayElements() {
