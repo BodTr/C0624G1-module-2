@@ -44,8 +44,8 @@ public class Contact {
         this.address = address;
     }
     public String toString() {
-        return "[id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber
-                + ", email=" + email + ", address=" + address + "]";
+        return "{id = " + id + ", name = " + name + ", phoneNumber = " + phoneNumber
+                + ", email = " + email + ", address = " + address + "}\n";
     }
 
 }

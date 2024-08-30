@@ -46,7 +46,11 @@ public class ContactsList {
         this.contacts.remove(index);
     }
     public String toString() {
-        return contacts.toString();
+        String sumString = "";
+        for (Contact c : this.contacts) {
+            sumString += c.toString();
+        }
+        return sumString;
     }
 
 }
