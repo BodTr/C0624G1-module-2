@@ -1,30 +1,52 @@
 package com.assignment.exercise_2;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ContactsList<T> {
-    private ArrayList<T> contacts;
+
+public class ContactsList {
+
+    private List<Contact> contacts;
     public ContactsList() {
-
         this.contacts = new ArrayList<>();
     }
-    public void addContact(T contact) {
-        contacts.add(contact);
+    public List<Contact> getContacts() {
+        return contacts;
     }
-    public void setContact(int index, T contact) {
-        contacts.set(index, contact);
+    public void setContacts(ArrayList<Contact> contacts) {
+        this.contacts = contacts;
     }
-    public void displayContacts() {
-        System.out.println("Hiển thị danh bạ:");
-        for (int i = 0; i < contacts.size(); i++) {
-            System.out.println(contacts.get(i));
+    public void addContact(Contact contact) {
+        this.contacts.add(contact);
+    }
+    public int findContactIndex(int id) {
+        int idC;
+        int index = -1;
+        for (Contact c : this.contacts) {
+            idC = c.getId();
+
+            if (idC == id) {
+                index = this.contacts.indexOf(c);
+                break;
+            }
         }
-    }
-    public T findContact(int index) {
-        return contacts.get(index);
-    }
-    public void removeContact(int index) {
-        contacts.remove(index);
+
+        return index;
+
     }
 
+    public String findContact(int index) {
+        Contact findedContact = this.contacts.get(index);
+        return findedContact.toString();
+    }
+
+    public void editContact(int index, Contact contact) {
+        this.contacts.set(index, contact);
+    }
+    public void removeContact(int index) {
+        this.contacts.remove(index);
+    }
+    public String toString() {
+        return contacts.toString();
+    }
 
 }
