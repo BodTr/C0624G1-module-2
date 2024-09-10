@@ -1,2 +1,5 @@
-package com.lession_21.notification_factory;public interface Notification {
+package com.lession_21.notification_factory;
+
+public interface Notification {
+    void notifyUser();
 }
