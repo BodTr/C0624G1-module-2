@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadFile {
+public class FileReaderClass {
     public List<MedicalRecord> recordsFileReader(String filePath) {
         List<MedicalRecord> medicalRecords = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

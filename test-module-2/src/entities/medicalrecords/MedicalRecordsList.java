@@ -1,5 +1,8 @@
 package entities.medicalrecords;
 
+import entities.constant_variable.Constants;
+import helpers.fileManipulation.FileReaderClass;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,19 +13,29 @@ public class MedicalRecordsList {
         this.medicalRecords = new ArrayList<>();
     }
     public static MedicalRecordsList getInstance() {
-        if (instance == null) {
-            instance = new MedicalRecordsList();
+        try {
+            if (instance == null) {
+                MedicalRecordsList recordsList = new MedicalRecordsList();
+                String filePath = Constants.MEDICAL_RECORDS_FILE_PATH;
+                FileReaderClass fileReader = new FileReaderClass();
+                List<MedicalRecord> recordsCSV = fileReader.recordsFileReader(filePath);
+                recordsList.medicalRecords.addAll(recordsCSV);
+                instance = recordsList;
+            }
+            return instance;
+        } catch (NullPointerException e) {
+            return new MedicalRecordsList();
         }
-        return instance;
+
     }
     public List<MedicalRecord> getMedicalRecords() {
         return medicalRecords;
     }
+
     public void addRecord(MedicalRecord medicalRecord) {
         this.medicalRecords.add(medicalRecord);
     }
     public void showMedicalRecords() {
-        System.out.println("Medical records list:");
         for (MedicalRecord medicalRecord : this.medicalRecords) {
             System.out.println(medicalRecord.toString());
         }

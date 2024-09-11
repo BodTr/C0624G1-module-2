@@ -1,7 +1,7 @@
 package helpers.validation;
 
-import custom_exceptions.DuplicateValueExceptions;
-import custom_exceptions.InvalidValueExceptions;
+import entities.custom_exceptions.DuplicatedValueExceptions;
+import entities.custom_exceptions.InvalidValueExceptions;
 import entities.medicalrecords.MedicalRecord;
 import entities.medicalrecords.MedicalRecordsList;
 
@@ -33,7 +33,7 @@ public class RecordValidation {
             throw new InvalidValueExceptions("Loại vip không đúng định dạng, định dạng đúng VIP I, VIP II, VIP III");
         }
     }
-    public void duplicateRecordCodeValidation (String medicalRecordCode) throws DuplicateValueExceptions {
+    public void duplicateRecordCodeValidation (String medicalRecordCode) throws DuplicatedValueExceptions {
         MedicalRecordsList listInstance = MedicalRecordsList.getInstance();
         List<MedicalRecord> recordsList = listInstance.getMedicalRecords();
         boolean duplicate = false;
@@ -44,7 +44,7 @@ public class RecordValidation {
             }
         }
         if (duplicate) {
-            throw new DuplicateValueExceptions("Bệnh án đã tồn tại");
+            throw new DuplicatedValueExceptions("Bệnh án đã tồn tại");
         }
     }
 }

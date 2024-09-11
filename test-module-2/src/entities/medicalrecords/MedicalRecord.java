@@ -73,6 +73,10 @@ public abstract class MedicalRecord {
         this.patientCode = patientCode;
     }
 
+    public String toCSV() {
+        return numOrder + "," + medicalRecordCode + "," + patientCode + "," + patientName + "," + admissionDate + "," + dischargeDate + "," + admisionReason;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -83,6 +87,7 @@ public abstract class MedicalRecord {
                 ", admissionDate='" + admissionDate + '\'' +
                 ", dischargeDate='" + dischargeDate + '\'' +
                 ", admisionReason='" + admisionReason + '\'' +
-                '}';
+                ","
+                ;
     }
 }

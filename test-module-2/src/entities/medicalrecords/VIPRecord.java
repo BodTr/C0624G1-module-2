@@ -27,11 +27,16 @@ public class VIPRecord extends MedicalRecord {
     }
 
     @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + vipType + ", " + vipDuration;
+    }
+
+    @Override
     public String toString() {
-        return "VIPRecord{" +
-                "vipType='" + vipType + '\'' +
-                ", vipDuration='" + vipDuration + '\'' +
+        return
                 super.toString() +
-                "} ";
+                        "vipType='" + vipType +
+                        ", vipDuration='" + vipDuration +
+                "} \n";
     }
 }

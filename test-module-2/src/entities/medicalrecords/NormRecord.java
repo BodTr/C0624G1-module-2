@@ -15,10 +15,15 @@ public class NormRecord extends MedicalRecord {
     }
 
     @Override
-    public String toString() {
-        return "NormRecord{" +
-                "fee=" + fee +
-                super.toString() +
-                "} ";
+    public String toCSV() {
+        return super.toCSV() + ", " + fee;
     }
+    @Override
+    public String toString() {
+        return
+                super.toString() +
+                "fee=" + fee +
+                "} \n";
+    }
+
 }
